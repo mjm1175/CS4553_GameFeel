@@ -6,7 +6,7 @@ public class CamMove : MonoBehaviour
 {
     public Transform player;
 
-    public Vector3 offset = new Vector2();
+    public Vector3 offset = new Vector3();
     // Start is called before the first frame update
     void Start()
     {

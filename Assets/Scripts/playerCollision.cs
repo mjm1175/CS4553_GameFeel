@@ -16,6 +16,10 @@ public class playerCollision : MonoBehaviour
             if (GlobalVars.cameraShake){
                 StartCoroutine(cms.shake());
             }
+            if (GlobalVars.dissolveEffect)
+            {
+                Dissolve.isDissolving = true;
+            }
         }
         
         

@@ -18,7 +18,7 @@ public class ManageScene : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
 
-        if (timeElapsed > 20){
+        if (timeElapsed > 10){
             SceneManager.LoadScene("2DPlatformer");
         }
     }

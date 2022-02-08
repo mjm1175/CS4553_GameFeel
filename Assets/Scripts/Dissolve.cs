@@ -6,7 +6,7 @@ public class Dissolve : MonoBehaviour
 {
     private Material material;
 
-    private bool isDissolving = false;
+    public static bool isDissolving = false;
 
     private float fade = 1f;
     
@@ -25,9 +25,9 @@ public class Dissolve : MonoBehaviour
             isDissolvinig = true;
         }*/
 
-        if (GlobalVars.dissolveEffect){
-            isDissolving = true;
-        }
+        // if (GlobalVars.dissolveEffect){
+        //     isDissolving = true;
+        // }
         
         if (isDissolving)
         {

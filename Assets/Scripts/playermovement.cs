@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
 
@@ -18,7 +18,7 @@ public class playerMovement : MonoBehaviour
     {
         //Add a forward force
         rb.AddForce(Vector2.right * forwardForce * Time.deltaTime);
-
         
+
     }
 }
