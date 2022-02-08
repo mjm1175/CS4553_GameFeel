@@ -39,4 +39,12 @@ public class ToggleScript : MonoBehaviour
             unshadedEnv.SetActive(false);
         }
     }
+
+    public void Trail(){
+        if (GlobalVars.trailEffect){
+            GlobalVars.trailEffect = false;
+        } else {
+            GlobalVars.trailEffect = true;
+        }
+    }
 }

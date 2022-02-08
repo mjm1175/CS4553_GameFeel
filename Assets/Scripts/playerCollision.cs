@@ -9,10 +9,10 @@ public class playerCollision : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        Debug.Log("collide");
+        //Debug.Log("collide");
         if (collisionInfo.collider.CompareTag("Finish"))
         {
-            Debug.Log("aha");
+            //Debug.Log("aha");
             if (GlobalVars.cameraShake){
                 StartCoroutine(cms.shake());
             }
