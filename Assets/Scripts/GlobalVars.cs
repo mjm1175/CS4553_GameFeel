@@ -1,5 +1,5 @@
 public class GlobalVars
 {
-    public static bool cameraShake = true;
-    public static bool fadeEffect = false;
+    public static bool cameraShake = false;
+    public static bool dissolveEffect = false;
 }

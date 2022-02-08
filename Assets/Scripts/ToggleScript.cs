@@ -11,4 +11,12 @@ public class ToggleScript : MonoBehaviour
             GlobalVars.cameraShake = true;
         }
     }
+
+    public void Dissolve(){
+        if(GlobalVars.dissolveEffect){
+            GlobalVars.dissolveEffect = false;
+        } else {
+            GlobalVars.dissolveEffect = true;
+        }
+    }
 }
