@@ -13,7 +13,9 @@ public class playerCollision : MonoBehaviour
         if (collisionInfo.collider.CompareTag("Finish"))
         {
             Debug.Log("aha");
-            StartCoroutine(cms.shake());
+            if (GlobalVars.cameraShake){
+                StartCoroutine(cms.shake());
+            }
         }
         
         

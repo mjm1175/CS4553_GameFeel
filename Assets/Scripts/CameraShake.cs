@@ -10,19 +10,17 @@ public class CameraShake : MonoBehaviour
 
     public IEnumerator shake()
     {
-        Debug.Log("hwllo");
+        //Debug.Log("hwllo");
         Vector2 originalPos = transform.localPosition;
         float elapse = 0.0f;
-        if (GlobalVars.cameraShake){
-            while (elapse < shaketime)
-            {
-                float x = Random.Range(-1f, 1f);
-                float y = Random.Range(-1f, 1f);
-                transform.localPosition = new Vector3(x+ player.position.x, y + player.position.y, -1) ;
-                elapse += Time.deltaTime;
-                yield return null;
-            }            
-        }
+        while (elapse < shaketime)
+        {
+            float x = Random.Range(-1f, 1f);
+            float y = Random.Range(-1f, 1f);
+            transform.localPosition = new Vector3(x+ player.position.x, y + player.position.y, -1) ;
+            elapse += Time.deltaTime;
+            yield return null;
+        }            
 
 
         transform.localPosition = originalPos;
