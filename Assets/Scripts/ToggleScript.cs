@@ -7,7 +7,9 @@ public class ToggleScript : MonoBehaviour
     
     public GameObject shadedEnv;
     public GameObject unshadedEnv;
-
+    public GameObject sound;
+    public GameObject sound1;
+    public GameObject bou;
     private void Start() {
         shadedEnv.SetActive(false);
     }
@@ -45,6 +47,37 @@ public class ToggleScript : MonoBehaviour
             GlobalVars.trailEffect = false;
         } else {
             GlobalVars.trailEffect = true;
+        }
+    }
+    public void Sound()
+    {
+        if (GlobalVars.soundEffect)
+        {
+            GlobalVars.soundEffect = false;
+            sound.SetActive(false);
+            
+        }
+        else
+        {
+            GlobalVars.soundEffect = true;
+            sound.SetActive(true);
+           
+        }
+    }
+    public void Bou()
+    {
+        if (GlobalVars.bouEffect)
+        {
+            GlobalVars.bouEffect = false;
+            sound1.SetActive(false);
+
+
+        }
+        else
+        {
+            GlobalVars.bouEffect = true;
+            sound1.SetActive(true);
+            bou.GetComponent<Up>().enabled = true;
         }
     }
 }

@@ -5,18 +5,15 @@ using UnityEngine;
 public class Trail : MonoBehaviour
 {
     public GameObject prefab;
+
+    private IEnumerator TrailCor;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(trail());
+        TrailCor = trail();
+        StartCoroutine(TrailCor);
     }
-
-    // void Update()
-    // {
-    //     GameObject s = Instantiate(prefab);
-    //     s.transform.position = this.transform.position;
-    //     Destroy(s,0.1f);
-    // }
+    
     
     public IEnumerator trail()
     {
@@ -36,7 +33,22 @@ public class Trail : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         
-        yield return new WaitForSeconds(0.5f);
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collisionInfo)
+    {
+        if (collisionInfo.collider.CompareTag("Finish"))
+        {
+            StopCoroutine(TrailCor);
+        }
+    }
+
+    void update()
+    {
+        if (!GlobalVars.trailEffect)
+        {
+            StopCoroutine(TrailCor);
+        }
     }
 }
