@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ManageScene : MonoBehaviour
 {
     private float timeElapsed = 0;
-    public float timeTilRestart = 15;
+    public float timeTilRestart = 10;
     // Start is called before the first frame update
     void Start()
     {
