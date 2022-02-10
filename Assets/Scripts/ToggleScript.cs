@@ -11,7 +11,7 @@ public class ToggleScript : MonoBehaviour
     public GameObject sound1;
     public GameObject bou;
     private void Start() {
-        shadedEnv.SetActive(false);
+        //shadedEnv.SetActive(false);
     }
 
     public void CameraShake(){
@@ -31,12 +31,12 @@ public class ToggleScript : MonoBehaviour
     }
 
     public void Depth(){
-        if(GlobalVars.depthEffect){
-            GlobalVars.depthEffect = false;
+        if(GlobalVars.lightingEffect){
+            GlobalVars.lightingEffect = false;
             shadedEnv.SetActive(false);
             unshadedEnv.SetActive(true);
         } else {
-            GlobalVars.depthEffect = true;
+            GlobalVars.lightingEffect = true;
             shadedEnv.SetActive(true);
             unshadedEnv.SetActive(false);
         }

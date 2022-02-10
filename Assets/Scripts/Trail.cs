@@ -25,8 +25,8 @@ public class Trail : MonoBehaviour
                     GameObject s = Instantiate(prefab);
                     s.transform.position = this.transform.position;
                     s.transform.localScale = this.transform.localScale * (1-i*0.18F);
-                    Destroy(s,0.1f);
-                    yield return new WaitForSeconds(0.05f);
+                    Destroy(s,0.2f);
+                    yield return new WaitForSeconds(0.1f);
                 }                
             }
 
