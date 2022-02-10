@@ -6,6 +6,7 @@ public static class GlobalVars
     public static bool trailEffect = false;
     public static bool soundEffect = false;
     public static bool bouEffect = false;
+    public static bool persistentSound = false;
     public static void ResetVars(){
         cameraShake = false;
         dissolveEffect = false;
@@ -13,5 +14,6 @@ public static class GlobalVars
         trailEffect = false;
         soundEffect = false;
         bouEffect = false;
+        //persistentSound = false;
     }
 }

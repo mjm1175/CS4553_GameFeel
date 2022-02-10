@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class ToggleScript : MonoBehaviour
 {
-    
+    public PersistentBGM pbgm;
+    public NonPersistentBGM bgm;
     public GameObject shadedEnv;
     public GameObject unshadedEnv;
     public GameObject sound;
@@ -19,6 +20,18 @@ public class ToggleScript : MonoBehaviour
     public GameObject BouToggle;
     private void Start() {
         //shadedEnv.SetActive(false);
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown("m")){
+            if (!GlobalVars.persistentSound){
+                GlobalVars.persistentSound = true;
+                pbgm.TurnItOn();
+                if (GlobalVars.soundEffect){
+                    bgm.TurnItOff();
+                }
+            }
+        }
     }
 
     public void CameraShake(){
@@ -61,14 +74,19 @@ public class ToggleScript : MonoBehaviour
         if (GlobalVars.soundEffect)
         {
             GlobalVars.soundEffect = false;
-            //sound.SetActive(false);
-            
+            if (!GlobalVars.persistentSound){
+                bgm.TurnItOff();
+            }
+            //bgm.TurnItOff();
         }
         else
         {
+            if (!GlobalVars.persistentSound){
+                bgm.TurnItOn();
+            }
             GlobalVars.soundEffect = true;
-            //sound.SetActive(true);
-           
+
+           //bgm.TurnItOn();
         }
     }
     public void Bou()
