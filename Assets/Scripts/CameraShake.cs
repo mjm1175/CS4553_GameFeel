@@ -15,8 +15,8 @@ public class CameraShake : MonoBehaviour
         float elapse = 0.0f;
         while (elapse < shaketime)
         {
-            float x = Random.Range(-1f, 1f);
-            float y = Random.Range(-1f, 1f);
+            float x = Random.Range(-1f, 1f) * 0.5f;
+            float y = Random.Range(-1f, 1f) * 0.5f;
             transform.localPosition = new Vector3(x+ player.position.x, y + player.position.y, -1) ;
             elapse += Time.deltaTime;
             yield return null;

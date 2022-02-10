@@ -8,14 +8,16 @@ public class playerCollision : MonoBehaviour
     public CameraShake cms;
     public LightFade lf;
 
-    private Rigidbody2D rb;
-    public GameObject sa;
-    public GameObject sc;
+
+    private bool firstCollision;
+
+    public AudioSource dropSound;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        firstCollision = true;
     }
+
     private void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         //Debug.Log("collide");
@@ -26,25 +28,31 @@ public class playerCollision : MonoBehaviour
                 StartCoroutine(cms.shake());
                 // StopCoroutine(GetComponent<Trail>().TrailCor);
             }
+
+            if (GlobalVars.soundEffect){
+                dropSound.Play();
+            }
             if (GlobalVars.dissolveEffect)
             {
                 Dissolve.isDissolving = true;
+            }             
+            if (firstCollision){
+
+                if (GlobalVars.lightingEffect){
+                    StartCoroutine(lf.fadeOut());
+                }                
             }
-            StartCoroutine(lf.fadeOut());
+            firstCollision = false;
+
+
+            
 
 
         }
-        if (collisionInfo.gameObject.CompareTag("sound"))
-        {
-            sound.SetActive(true);
-            sc.SetActive(false);
-
-
-        }
-       
+    
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ds"))
         {
@@ -52,5 +60,5 @@ public class playerCollision : MonoBehaviour
             sc.SetActive(true);
         }
       
-    }
+    }*/
 }

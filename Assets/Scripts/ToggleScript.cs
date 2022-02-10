@@ -54,13 +54,13 @@ public class ToggleScript : MonoBehaviour
         if (GlobalVars.soundEffect)
         {
             GlobalVars.soundEffect = false;
-            sound.SetActive(false);
+            //sound.SetActive(false);
             
         }
         else
         {
             GlobalVars.soundEffect = true;
-            sound.SetActive(true);
+            //sound.SetActive(true);
            
         }
     }
@@ -79,5 +79,14 @@ public class ToggleScript : MonoBehaviour
             sound1.SetActive(true);
             bou.GetComponent<Up>().enabled = true;
         }
+    }
+
+    public void All(){
+        Bou();
+        Sound();
+        Trail();
+        Depth();
+        Dissolve();
+        CameraShake();
     }
 }

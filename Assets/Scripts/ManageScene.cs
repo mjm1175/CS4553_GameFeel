@@ -19,7 +19,7 @@ public class ManageScene : MonoBehaviour
         timeElapsed += Time.deltaTime;
 
         if (timeElapsed > timeTilRestart){
-            //GlobalVars.ResetVars();
+            GlobalVars.ResetVars();
             SceneManager.LoadScene("2DPlatformer");
         }
     }

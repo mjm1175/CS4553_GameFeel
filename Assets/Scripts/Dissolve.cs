@@ -28,16 +28,21 @@ public class Dissolve : MonoBehaviour
         // if (GlobalVars.dissolveEffect){
         //     isDissolving = true;
         // }
-        
         if (isDissolving)
         {
+            float i = 0;
+            while (i < 10.0){
+                i += Time.deltaTime;
+                Debug.Log(i);
+            }
             fade -= Time.deltaTime;
             if (fade <= 0f)
             {
                 fade = 0f;
                 isDissolving = false;
             }
-            material.SetFloat("_Fade", fade);
+            material.SetFloat("_Fade", fade);     
         }
+
     }
 }
