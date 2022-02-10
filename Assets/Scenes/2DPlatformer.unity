@@ -4067,6 +4067,12 @@ MonoBehaviour:
   sound: {fileID: 520398104}
   sound1: {fileID: 1900018126}
   bou: {fileID: 1337025786}
+  CamShakeToggle: {fileID: 166279043}
+  DissolveToggle: {fileID: 260736883}
+  DepthToggle: {fileID: 1460661242}
+  TrailToggle: {fileID: 514626105}
+  SoundToggle: {fileID: 136864457}
+  BouToggle: {fileID: 342228449}
 --- !u!4 &1435117758
 Transform:
   m_ObjectHideFlags: 0
