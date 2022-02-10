@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToggleScript : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class ToggleScript : MonoBehaviour
     public GameObject sound;
     public GameObject sound1;
     public GameObject bou;
+    public GameObject CamShakeToggle;
+    public GameObject DissolveToggle;
+    public GameObject DepthToggle;
+    public GameObject TrailToggle;
+    public GameObject SoundToggle;
+    public GameObject BouToggle;
     private void Start() {
         //shadedEnv.SetActive(false);
     }
@@ -82,11 +89,19 @@ public class ToggleScript : MonoBehaviour
     }
 
     public void All(){
-        Bou();
-        Sound();
-        Trail();
-        Depth();
-        Dissolve();
-        CameraShake();
+        CamShakeToggle.GetComponent<Toggle>().isOn = !CamShakeToggle.GetComponent<Toggle>().isOn;
+        DissolveToggle.GetComponent<Toggle>().isOn = !DissolveToggle.GetComponent<Toggle>().isOn;
+        DepthToggle.GetComponent<Toggle>().isOn = !DepthToggle.GetComponent<Toggle>().isOn;
+        TrailToggle.GetComponent<Toggle>().isOn = !TrailToggle.GetComponent<Toggle>().isOn;
+        SoundToggle.GetComponent<Toggle>().isOn = !SoundToggle.GetComponent<Toggle>().isOn;
+        BouToggle.GetComponent<Toggle>().isOn = !BouToggle.GetComponent<Toggle>().isOn;
+        
+        // Bou();
+        // Sound();
+        // Trail();
+        // Depth();
+        // Dissolve();
+        // CameraShake();
+
     }
 }
