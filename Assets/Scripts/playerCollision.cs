@@ -6,6 +6,8 @@ public class playerCollision : MonoBehaviour
 {
     public GameObject sound;
     public CameraShake cms;
+    public LightFade lf;
+
     private Rigidbody2D rb;
     public GameObject sa;
     public GameObject sc;
@@ -28,6 +30,7 @@ public class playerCollision : MonoBehaviour
             {
                 Dissolve.isDissolving = true;
             }
+            StartCoroutine(lf.fadeOut());
 
 
         }
